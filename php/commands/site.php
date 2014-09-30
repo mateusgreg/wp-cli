@@ -37,7 +37,7 @@ class Site_Command extends \WP_CLI\CommandWithDBObject {
 		global $wpdb;
 
 		// Empty posts and post cache
-		$posts_query = "SELECT ID FROM $wpdb->posts";
+		$posts_query = "SELECT ID FROM $wpdb->posts WHERE 1=1";
 		$posts = new WP_CLI\Iterators\Query( $posts_query, 10000 );
 
 		$taxonomies = get_taxonomies();
